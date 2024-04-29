@@ -1,5 +1,7 @@
 package by.itstep.javatraining.revision.task;
 
+import java.util.Arrays;
+
 /*	Task 07. Boxes [коробки]
  *
  *	Есть две коробки, первая размером A1, B1, C1, вторая размером A2, B2, C2.
@@ -47,6 +49,29 @@ package by.itstep.javatraining.revision.task;
 
 public class Task07 {
     public static String start(int a1, int b1, int c1, int a2, int b2, int c2) {
-        return "";
+    	if (a1 <= 0 || b1 <= 0 || c1 <= 0 || a2 <= 0 || b2 <= 0 || c2 <= 0) {
+            return "Error.";
+        }
+        String result = "Boxes are incomparable.";
+        
+        int[] box1 = {a1, b1, c1};
+        Arrays.sort(box1);
+        
+        int[] box2 = {a2, b2, c2};
+        Arrays.sort(box2);
+        
+        if (box1[0] <= box2[0] && box1[1] <= box2[1] && box1[2] <= box2[2]) {
+            result = "The first box is smaller than the second one.";
+        }
+        
+        if (box2[0] <= box1[0] && box2[1] <= box1[1] && box2[2] <= box1[2]) {
+            result = "The first box is larger than the second one.";
+        }
+        
+        if (box1[0] == box2[0] && box1[1] == box2[1] && box1[2] == box2[2]) {
+            result = "Boxes are equal.";
+        }
+
+        return result;
     }
 }
