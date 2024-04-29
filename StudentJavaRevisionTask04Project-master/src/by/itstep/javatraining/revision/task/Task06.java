@@ -1,6 +1,8 @@
 
 package by.itstep.javatraining.revision.task;
 
+import java.util.Arrays;
+
 /*	Task 06. Rectangular World 3 [прямоугольный мир]
  *
  *	В прямоугольном мире есть свинья, которая раскормлена до размеров ПАРАЛЛЕЛЕПИПЕДА
@@ -38,6 +40,18 @@ package by.itstep.javatraining.revision.task;
 
 public class Task06 {
     public static boolean start(int x, int y, int z, int a, int b, int c) {
-        return false;
+    	if(x < 1 || y < 1 || z < 1 || a < 1 || b < 1 || c < 1) {
+    		return false;
+    	}
+    	
+    	int[] sidesP = {x, y, z};
+        Arrays.sort(sidesP);
+        
+        int[] sidesC = {a, b, c};
+        Arrays.sort(sidesC);
+        
+        return sidesP[0] <= sidesC[0] 
+        		&& sidesP[1] <= sidesC[1] 
+        				&& sidesP[2] <= sidesC[2];
     }
 }
