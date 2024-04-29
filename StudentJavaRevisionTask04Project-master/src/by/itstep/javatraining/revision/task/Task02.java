@@ -37,7 +37,19 @@ package by.itstep.javatraining.revision.task;
  *	[output 5]: 0
  */
 public class Task02 {
-    public static int start(int a, int b, int c) {
-        return 0;
-    }
+	public static int start(int a, int b, int c) {
+		if (a < 1 || b < 1 || c < 1) {
+			System.out.println(a + "a" +b+"b"+c+"c");
+			System.out.println(0);
+			return 0;
+		}
+
+		if(a + b + c < 5) {
+			return 3;
+		}
+		
+		System.out.println(a + "a" +b+"b"+c+"c");
+		System.out.println((int) Math.round(a / 2.0 + b / 2.0 + c / 2.0));
+		return (int) Math.round(a / 2.0 + b / 2.0 + c / 2.0);
+	}
 }
