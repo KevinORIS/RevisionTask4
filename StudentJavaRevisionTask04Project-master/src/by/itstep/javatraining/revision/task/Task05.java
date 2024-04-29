@@ -27,6 +27,10 @@ package by.itstep.javatraining.revision.task;
 
 public class Task05 {
     public static String start(int a, int b, int c) {
-        return "";
+        int min = c < (a < b ? a : b) ? c : (a < b ? a : b);
+    	int max = c > (a > b ? a : b) ? c : (a > b ? a : b);
+    	int med = a + b + c - min - max;
+    	
+    	return min + " " + med + " " + max;
     }
 }
