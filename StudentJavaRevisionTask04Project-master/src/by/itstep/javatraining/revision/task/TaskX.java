@@ -39,6 +39,12 @@ package by.itstep.javatraining.revision.task;
 
 public class TaskX {
     public static int start(int v, int t) {
-        return -1;
+    	if(t < 0) {
+    		return -1;
+    	}
+    	
+    	int s = (v * t % 56 + 56) % 56;
+    	
+        return s;
     }
 }
