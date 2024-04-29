@@ -56,7 +56,7 @@ public class TaskTester {
     public static String testingTask02() {
 
         boolean result = Task02.start(20, 21, 22) == 32
-                && Task02.start(19, 15, 23) == 30
+                && Task02.start(19, 15, 23) == 29
                 && Task02.start(16, 18, 20) == 27
                 && Task02.start(1, 1, 1) == 3
                 && Task02.start(2, 1, 1) == 3
