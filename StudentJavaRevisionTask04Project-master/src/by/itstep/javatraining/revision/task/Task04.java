@@ -40,7 +40,17 @@ package by.itstep.javatraining.revision.task;
  */
 
 public class Task04 {
-    public static int start(int n, int m, int x, int y) {
-        return -1;
-    }
+	public static int start(int n, int m, int x, int y) {
+		if (n < 0 || m < 0 || x < 0 || y < 0 || y > (n > m ? n : m) || x > (n > m ? m : n)) {
+			return -1;
+		}
+
+		int longer = n > m ? n : m;
+		int shorter = n > m ? m : n;
+
+		int minL = x < shorter - x ? x : shorter - x;
+		int minS = y < longer - y ? y : longer - y;
+
+		return minL < minS ? minL : minS;
+	}
 }
